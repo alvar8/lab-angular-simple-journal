@@ -11,18 +11,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SingleEntryComponent implements OnInit {
   entryId:string;
-  entries;
+  entry;
   constructor(public retrieve:RetrieveService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params
-      .subscribe((params) => this.entryId = String(params['id']));
+      .subscribe((params) => {
+        this.entryId = String(params['id'])
+        this.retrieve.get(this.entryId)
+        .subscribe( ey => {
+          console.log(ey)
+            this.entry = ey
+            });
+      });
 
-      this.retrieve.getList().subscribe( ey => {
-        // .toPromise().then( ey => {
-          this.entries = ey
-          });
-    
+
+
   }
 
 }

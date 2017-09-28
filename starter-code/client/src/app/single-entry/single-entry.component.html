@@ -2,11 +2,9 @@
   single-entry works!
 </p>
 
-<div *ngFor="let entry of entries">
-  <div *ngIf="entry._id==entryId">
+<div *ngIf="entry">
     <p>{{entry.title}}</p>
     <p>{{entry.date}}</p>
     <p>{{entry.content}}</p>
     <a [routerLink]="['/home']"> Go back </a>
-  </div>
 </div>

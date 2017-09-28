@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RetrieveService} from './services/retrieve.service'
 import { AppComponent } from './app.component';
 import { EntryListComponent } from './entry-list/entry-list.component';
-import {RouterModule} from '@angular/router';
 import {routes} from './routes';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [

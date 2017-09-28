@@ -14,7 +14,7 @@ export class EntryListComponent implements OnInit {
   constructor(public retrieve:RetrieveService) { }
 
   ngOnInit() {
-    this.entries = this.retrieve.getList().subscribe( ey => {
+  this.retrieve.getList().subscribe( ey => {
     // .toPromise().then( ey => {
       this.entries = ey
       console.log(this.entries)
